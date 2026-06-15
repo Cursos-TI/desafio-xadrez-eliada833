@@ -2,38 +2,34 @@
 
 int main() {
     // Tema 4 - Movimentação do Cavalo
-    // Movimento em "L": 2 casas para Cima + 1 casa para Direita
-    // Usando loops aninhados: for + while
+    // Movimento: 2 casas para Cima + 1 casa para Direita
+    // Requisito: loops aninhados for + while
     
-    int casas_verticais = 2;   // Quantidade de casas para Cima
-    int casas_horizontais = 1; // Quantidade de casas para Direita
+    int casas_verticais = 2;   // 2 casas para Cima
+    int casas_horizontais = 1; // 1 casa para Direita
     int i, j;
     
-    printf("=== Movimentacao do Cavalo ===\n");
-    printf("Movimento em L: 2 casas para Cima + 1 casa para Direita\n\n");
+    printf("=== Movimentacao do Cavalo ===\n\n");
     
-    // Loop FOR externo: controla quantas vezes vamos mover na vertical
-    for (i = 1; i <= casas_verticais; i++) {
+    // FOR externo: controla as 2 casas verticais
+    for (i = 0; i < casas_verticais; i++) {
         
-        // Loop WHILE interno: executa o print de cada passo vertical
-        // Isso caracteriza os loops aninhados exigidos
+        // WHILE interno: imprime cada "Cima"
+        // Isso caracteriza loops aninhados exigidos
         j = 0;
         while (j < 1) {
-            printf("Cima\n"); // Saída padrão do requisito
+            printf("Cima\n");
             j++;
         }
+    } // Fim do for - essa chave que tava faltando
+    
+    // Movimento horizontal fora do loop aninhado
+    // Pode usar outro loop se quiser, mas não é obrigatório
+    for (i = 0; i < casas_horizontais; i++) {
+        printf("Direita\n");
     }
     
-    // Após terminar as 2 casas para Cima, faz 1 casa para Direita
-    // Usando do-while só pra garantir outro tipo de loop
-    int passos_direita = 0;
-    do {
-        printf("Direita\n"); // Saída padrão do requisito
-        passos_direita++;
-    } while (passos_direita < casas_horizontais);
-    
-    // Linha em branco para separar dos outros movimentos
-    printf("\n");
+    printf("\n"); // Linha em branco pedida no requisito
     
     return 0;
 }
