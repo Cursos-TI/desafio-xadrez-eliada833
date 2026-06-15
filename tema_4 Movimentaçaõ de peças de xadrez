@@ -1,35 +1,51 @@
 #include <stdio.h>
 
 int main() {
-    // Tema 4 - Movimentação do Cavalo
-    // Movimento: 2 casas para Cima + 1 casa para Direita
-    // Requisito: loops aninhados for + while
+    int i;
     
-    int casas_verticais = 2;   // 2 casas para Cima
-    int casas_horizontais = 1; // 1 casa para Direita
-    int i, j;
+    printf("=== MOVIMENTACAO DAS PECAS DE XADREZ ===\n\n");
     
-    printf("=== Movimentacao do Cavalo ===\n\n");
+    // 1. TORRE - 5 casas para Direita usando FOR
+    printf("--- TORRE: 5 casas para Direita ---\n");
+    for (i = 0; i < 5; i++) {
+        printf("Direita\n");
+    }
+    printf("\n");
     
-    // FOR externo: controla as 2 casas verticais
-    for (i = 0; i < casas_verticais; i++) {
-        
+    // 2. BISPO - 5 casas diagonal Cima + Direita usando WHILE
+    printf("--- BISPO: 5 casas diagonal Cima-Direita ---\n");
+    i = 0;
+    while (i < 5) {
+        printf("Cima, Direita\n");
+        i++;
+    }
+    printf("\n");
+    
+    // 3. RAINHA - 8 casas para Esquerda usando DO-WHILE
+    printf("--- RAINHA: 8 casas para Esquerda ---\n");
+    i = 0;
+    do {
+        printf("Esquerda\n");
+        i++;
+    } while (i < 8);
+    printf("\n");
+    
+    // 4. CAVALO - 2 Cima + 1 Direita em L usando FOR + WHILE ANINHADOS
+    printf("--- CAVALO: Movimento em L ---\n");
+    int j;
+    
+    // FOR externo: 2 casas verticais
+    for (i = 0; i < 2; i++) {
         // WHILE interno: imprime cada "Cima"
-        // Isso caracteriza loops aninhados exigidos
         j = 0;
         while (j < 1) {
             printf("Cima\n");
             j++;
         }
-    } // Fim do for - essa chave que tava faltando
-    
-    // Movimento horizontal fora do loop aninhado
-    // Pode usar outro loop se quiser, mas não é obrigatório
-    for (i = 0; i < casas_horizontais; i++) {
-        printf("Direita\n");
     }
-    
-    printf("\n"); // Linha em branco pedida no requisito
+    // Movimento horizontal
+    printf("Direita\n");
+    printf("\n");
     
     return 0;
 }
